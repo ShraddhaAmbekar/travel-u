@@ -1,0 +1,300 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.carousel-wrapper {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.tour-card {
+  border-radius: 15px;
+  overflow: hidden;
+  min-width: 370px;
+  padding: 15px;
+}
+
+.tour-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.tour-content {
+  padding: 15px 0;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #03DAC5;
+}
+
+.old-price {
+  text-decoration: line-through;
+  font-size: 14px;
+  color: #777;
+}
+
+.duration {
+  color: #767474;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+
+.action-buttons a {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid rgb(136, 134, 134);
+  transition: 0.3s;
+  width: 42px;
+  height: 42px;
+  color: white;
+  text-decoration: none;
+}
+
+.callback-btn {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #03A9F4;
+  color: black;
+  border-radius: 20px;
+  position: relative;
+  bottom: 0px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+}
+
+.callback-btn:hover {
+  background-color: #0288D1;
+}
+
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
+@media (max-width: 1080px) {
+
+
+  .carousel-container {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .tour-section {
+    margin: 10px 10px;
+  }
+
+
+  .tour-img {
+    height: 180px;
+    border-radius: 10px;
+  }
+
+
+}
+
+@media (max-width: 600px) {
+
+
+  .carousel-wrapper {
+    padding: 0px;
+    gap: 10px;
+  }
+  .carousel-wrapper {
+    padding: 0px;
+    gap: 0px;
+  }
+  .tour-card {
+    min-width: 300px;
+  }
+
+  .carousel-btn {
+    visibility: hidden;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .old-price {
+    font-size: 12px;
+  }
+
+}
+
+/* eight tours */
+.eight-tours {
+    margin: 50px 180px;
+}
+
+.tour-container2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.tour-card2 {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.tour-card2 img {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+}
+
+/* Hide Carousel on Desktop */
+.mobile-carousel {
+    display: none;
+}
+
+@media (max-width:1080px) {
+    .eight-tours {
+        margin: 0px 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tour-container2 {
+        display: none;
+    }
+
+    .mobile-carousel {
+        display: block;
+    }
+}
+
+/*blog section*/
+.blog-section {
+    margin: 50px 180px;
+}
+
+.blog-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blog-card {
+    width: 20%;
+    margin: 25px;
+}
+
+.blog-content {
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+}
+
+.blog-img {
+    height: 170px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.blog-img {
+
+    min-width: 100%;
+    border-radius: 10px;
+}
+
+@media (max-width:1080px) {
+
+    /*blog section*/
+    .blog-section {
+        margin: 30px 10px;
+    }
+
+    .blog-container {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .blog-card {
+        min-width: 40%;
+        margin: 10px;
+        margin: 20px
+    }
+
+    .blog-content {
+        font-size: 20px;
+        min-width: 40%;
+    }
+
+    .blog-img {
+        height: 180px;
+        min-width: 100%;
+        border-radius: 10px;
+
+    }
+}
+
+@media (max-width:768px) {
+    .blog-section {
+        margin: 20px 5px;
+    }
+
+    .blog-card {
+        min-width: 45%;
+        margin: 10px;
+    }
+
+    @media (max-width:600px) {
+        .blog-card {
+            width: 45%;
+            margin: 5px;
+        }
+
+        .blog-img {
+            height: 100px;
+            min-width: 100%;
+
+        }
+    }
+}

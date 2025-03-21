@@ -1,0 +1,6 @@
+Layout components (like Header, Footer, Sidebar)
+
+layouts/
+├── Header.js
+├── Footer.js
+├── Sidebar.js

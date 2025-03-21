@@ -1,18 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import './App.css';
+import './styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import Home from './pages/Home';
 
 function App() {
   return (
     <div className="App">
-<h1 class="success text-center">Welcome to our application</h1>
- 
-
-
-
+    <Home/>
+   
     </div>
   );
 }

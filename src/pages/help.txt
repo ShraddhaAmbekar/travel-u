@@ -1,0 +1,6 @@
+Page components (like Home, About, Contact)
+
+pages/
+├── Home.js
+├── About.js
+├── Contact.js

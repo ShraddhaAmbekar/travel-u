@@ -1,0 +1,60 @@
+src/
+├── assets/
+│   ├── images/
+│   ├── fonts/
+│   ├── videos/
+│
+├── components/
+│   ├── Button.js
+│   ├── Card.js
+│   ├── Navbar.js
+│
+├── pages/
+│   ├── Home.js
+│   ├── Destinations.js
+│   ├── Contact.js
+│
+├── layouts/
+│   ├── Header.js
+│   ├── Footer.js
+│
+├── hooks/
+│   ├── useFetch.js
+│
+├── context/
+│   ├── AuthContext.js
+│
+├── redux/
+│   ├── store.js
+│   ├── userSlice.js
+│
+├── utils/
+│   ├── fetchData.js
+│
+├── styles/
+│   ├── global.css
+│
+├── App.js
+├── index.js
+
+
+
+
+[I] for components 
+
+│-- components/          # All reusable UI components
+│   │-- layout/          # Layout components (Navbar, Footer, Sidebar)
+│   │-- destinations/    # Destination-related components
+│   │-- blogs/           # Blog-related components
+│   │-- trips/           # Trip-related components
+│   │-- auth/            # Authentication components (Login, Signup)
+│   │-- ui/              # Utility components (buttons, modals, loaders)
+│   │   │-- Card.js     
+│   │   │-- Button.js
+│   │   │-- Modal.js
+│   │   │-- Loader.js
+│   │   │-- ToastNotification.js
+│   │   │-- RatingStars.js
+│   │   │-- CarouselSlider.js
+│   │-- forms/           # Forms (TripPlannerForm, SearchBar, etc.)
+│   │-- search/          # Search & filter components
