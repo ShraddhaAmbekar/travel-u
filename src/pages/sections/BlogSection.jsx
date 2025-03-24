@@ -1,0 +1,33 @@
+// BlogSection.jsx
+import React from 'react';
+import BlogCard from "../ui/BlogCard"
+import blogPosts from "../../data/blogData"
+import "./BlogSection.css"
+
+
+const BlogSection = () => {
+    return (
+      <  div>
+        <section className="blog-section pb-5">
+            <h2>Blog section: Mindful Retreats</h2>
+            <div className="blog-container">
+                {blogPosts.map((post, index) => (
+                    <BlogCard key={index} {...post} />
+                ))}
+            </div>
+
+        </section>
+        <section className="blog-section pb-5">
+            <h2>Youtube section: Mindful Retreats</h2>
+            <div className="blog-container">
+                {blogPosts.map((post, index) => (
+                    <BlogCard key={index} {...post} />
+                ))}
+            </div>
+        </section>
+        </div>
+    );
+};
+
+export default BlogSection;
+

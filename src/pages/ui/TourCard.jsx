@@ -1,9 +1,10 @@
 // TourCard.jsx
-import React from 'react';
+import React from 'react'; 
 
-const TourCard = ({ imageUrl, title, duration, price, oldPrice }) => {
+
+const TourCard = ({id, imageUrl, title, duration, price, oldPrice }) => {
     return (
-        <div className="tour-card2 pb-4">
+        <div className="tour-card2 pb-4" key={id}>
             <img src={imageUrl} className="tour-img" alt={title} />
             <div className="tour-content">
                 <small className="duration">{duration}</small>

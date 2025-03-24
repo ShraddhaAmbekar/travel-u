@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'; 
+import "./BlogCard.css"
 
 const BlogCard = ({ imageUrl, title, description }) => {
     return (
