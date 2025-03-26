@@ -1,12 +1,11 @@
 import React, { useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./TourCarousel.css";
 import tours from "../../data/TourData";
-import TourCard from "../ui/TourCard"
+import TourCard from "../ui/TourCard";
 
 
 const TourCarousel = () => {
-  const carouselRef = useRef('');
+  const carouselRef = useRef(null);
   const cardWidth = 370 + 30; // Card width + margin (adjust if needed)
 
   const scrollLeft = () => {
@@ -28,19 +27,17 @@ const TourCarousel = () => {
       </button>
 
       <div className="carousel-wrapper" ref={carouselRef}>
-        {tours.map((tour,id) => (
-          <div className="tour-card">
-          <TourCard
-            key={id}
-            imageUrl={tour.imageUrl}
-            title={tour.title}
-            duration={tour.duration}
-            price={tour.price}
-            oldPrice={tour.oldPrice}
-          />
+        {tours.map((tour) => (
+          <div className="tour-card" key={tour.id}> 
+            <TourCard
+              imageUrl={tour.imageUrl}
+              title={tour.title}
+              duration={tour.duration}
+              price={tour.price}
+              oldPrice={tour.oldPrice}
+            />
           </div>
         ))}
-
       </div>
 
       <button className="carousel-btn next" onClick={scrollRight}>

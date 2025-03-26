@@ -1,5 +1,6 @@
 import React from 'react';
 import galleryData from '../../data/gallaryData';
+import './GallerySection.css'
 
 const GallerySection = () => {
   return (

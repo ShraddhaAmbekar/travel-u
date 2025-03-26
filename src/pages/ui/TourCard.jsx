@@ -1,10 +1,19 @@
 // TourCard.jsx
-import React from 'react'; 
+import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 
-const TourCard = ({id, imageUrl, title, duration, price, oldPrice }) => {
+
+const TourCard = ({ id, imageUrl, title, duration, price, oldPrice }) => {
+    const navigate = useNavigate();
+    const handleClick = (e) => {
+        if (e.target.closest(".action-buttons")) return; // Prevent navigation on button clicks
+        navigate(`/tour/${id}`, { state: { id, imageUrl, title, duration, price, oldPrice } });
+    };
+
+
     return (
-        <div className="tour-card2 pb-4" key={id}>
+        <div className="tour-card2 pb-4" onClick={handleClick}>
             <img src={imageUrl} className="tour-img" alt={title} />
             <div className="tour-content">
                 <small className="duration">{duration}</small>

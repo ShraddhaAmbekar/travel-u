@@ -12,6 +12,7 @@ const Home = () => {
     <div>
       <Header />
       <BottomNavbar />
+      
       <section>
         <h5 className="section-title text-center ">Welcome you <br />to <br /><span>"The Land of Gods"</span></h5>
       </section>
