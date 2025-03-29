@@ -6,7 +6,7 @@ import TourCard from "../ui/TourCard";
 
 const TourCarousel = () => {
   const carouselRef = useRef(null);
-  const cardWidth = 370 + 30; // Card width + margin (adjust if needed)
+  const cardWidth = 370 + 30; 
 
   const scrollLeft = () => {
     if (carouselRef.current) {
