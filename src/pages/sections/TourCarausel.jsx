@@ -30,6 +30,7 @@ const TourCarousel = () => {
         {tours.map((tour) => (
           <div className="tour-card" key={tour.id}> 
             <TourCard
+              id={tour.id}
               imageUrl={tour.imageUrl}
               title={tour.title}
               duration={tour.duration}
