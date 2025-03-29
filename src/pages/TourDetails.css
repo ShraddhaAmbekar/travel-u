@@ -1,0 +1,307 @@
+h1,
+h3 {
+  color: white;
+}
+
+.tour-details {
+  width: 100%;
+  margin: 0 200px;
+  background: #121212;
+  padding: 20px;
+  color: white;
+}
+
+.tour-details-img {
+  width: 1000px;
+  margin: 20px;
+  border-radius: 20px;
+  height: 500px;
+}
+
+.old-price {
+  text-decoration: line-through;
+}
+
+button {
+  color: white;
+}
+
+.card {
+  background-color: #121212;
+  border-radius: 10px;
+  color: white;
+}
+
+.list-group-item {
+  border: none;
+  font-size: 16px;
+  padding: 12px;
+  background: transparent;
+  color: white;
+}
+
+
+.routes {
+  border: 1px solid #333;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 12px;
+  background: transparent;
+  color: white;
+  margin: 10px;
+  list-style: none;
+}
+
+/* Button Container */
+.category-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #333;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  width: 120px;
+}
+
+.category-btn input {
+  display: none;
+}
+
+.category-btn.active {
+  background: #007bff;
+  color: #ffffff;
+  border-color: #0056b3;
+  /* Darker blue for active state */
+  box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Day Details */
+.day-details {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  border: 1px solid #333;
+  margin: 10px 0;
+  padding: 10px;
+  color: white;
+}
+
+/* Trip Section */
+.trip-heading {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Choose Trip Duration */
+.trip-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  cursor: grab;
+  padding-bottom: 10px;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar */
+.trip-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.trip-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 150px;
+}
+
+/* Trip Card */
+.trip-card {
+  display: inline-block;
+  padding: 15px;
+  text-align: center;
+  min-width: 150px;
+  border: none;
+  margin: 10px;
+}
+
+.trip-img-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0;
+}
+
+.trip-card.active .trip-image {
+  border: 2px solid white;
+  box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Circular Images */
+.trip-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.trip-subtitle {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.trip-price {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.trip-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 2px #333;
+  transform: translate(-50%, -50%);
+}
+
+/* Stay Category Buttons */
+.stay-category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Stay Category Button Styling */
+.hotel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #333;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+/* Hide Default Radio Button */
+.hotel-btn input {
+  display: none;
+}
+
+/* Active Button Style */
+.hotel-btn.active {
+  color: white;
+  border-color: rgb(11, 218, 59);
+  font-weight: bold;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1080px) {
+  .tour-details {
+    margin: 0px 0px;
+    padding: 0px;
+  }
+
+  .tour-details-img {
+    height: auto;
+    border-radius: 10px;
+    margin: 0px 0px;
+  }
+  
+  .trip-container {
+    margin-right: 0px;
+    justify-content: center;
+  }
+
+  /* itenerary */
+  .itinerary-main-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+}
+
+
+/* Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .tour-details-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0px 0px;
+  }
+
+  .trip-card {
+    min-width: 120px;
+  }
+
+  .trip-img-container {
+    width: 90px;
+    height: 90px;
+  }
+
+  .itinerary-main-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* itinerary */
+  .itinerary-gallery {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .itinerary-gallery-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Small Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .trip-card {
+    min-width: 100px;
+  }
+
+  .trip-title {
+    font-size: 16px;
+    /* Reduce font size for small screens */
+  }
+
+  .tour-details {
+    margin: 0 0px;
+    padding: 0px;
+  }
+
+  .trip-container {
+    padding: 0px;
+  }
+  
+  /* Trip Card */
+  .trip-card {
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+
+
+    margin: 0px;
+  }
+}

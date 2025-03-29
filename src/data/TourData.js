@@ -9,7 +9,7 @@ const tours = [
       id:1
   },
   {
-      imageUrl: 'https://tse2.mm.bing.net/th?id=OIP.pGyy34tcDzQvdUKeUN5GlwHaE8&pid=Api&P=0&h=180',
+      imageUrl: 'https://tse4.mm.bing.net/th?id=OIP.6rJvNUmBPBs4YGuZi-BCHwHaEU&pid=Api&P=0&h=180',
       title: 'Conquer The Kuari Pass',
       duration: '6D - 5N',
       price: 9000,
