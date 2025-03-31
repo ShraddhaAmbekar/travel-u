@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const TourCard = ({ id, imageUrl, title, duration, price, oldPrice }) => {
-    console.log("TourCard Props:", { id, imageUrl, title, duration, price, oldPrice });
+    
     const navigate = useNavigate();
     const handleClick = (e) => {
         if (e.target.closest(".action-buttons")) return; // Prevent navigation on button clicks

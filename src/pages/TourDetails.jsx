@@ -1,26 +1,70 @@
 import React from 'react';
-
 import { useLocation } from "react-router-dom";
 import { useRef, useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './TourDetails.css';
 import Header from '../components/layout/Header';
+import TourCarousel from './sections/TourCarausel';
 
 
 const tripOptions = [
-  { days: 3, price: "₹ 33,309", oldPrice: "₹ 50,930", image: ["https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"] },
-  { days: 4, price: "₹ 37,950", oldPrice: "₹ 50,930", image: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQiW2gg-YoD9WDAzSTNUI3RyA3ljTgJEGLRQ&s", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"] },
-  { days: 5, price: "₹ 68,550", oldPrice: "₹ 50,930", image: ["https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"] },
-  { days: 6, price: "₹ 40,930", oldPrice: "₹ 50,930", image: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQiW2gg-YoD9WDAzSTNUI3RyA3ljTgJEGLRQ&s", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"] },
-  { days: 7, price: "₹ 57,999", oldPrice: "₹ 50,930", image: ["https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"] },
-  { days: 8, price: "₹ 68,550", oldPrice: "₹ 50,930", image: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQiW2gg-YoD9WDAzSTNUI3RyA3ljTgJEGLRQ&s", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"] },
-  { days: 9, price: "₹ 37,950", oldPrice: "₹ 50,930", image: ["https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"] },
-  { days: 10, price: "₹ 37,950", oldPrice: "₹ 50,930", image: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQiW2gg-YoD9WDAzSTNUI3RyA3ljTgJEGLRQ&s", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"] },
-  { days: 15, price: "₹ 68,550", oldPrice: "₹ 50,930", image: ["https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"] },]
+  {
+    days: 3,
+    price: "₹ 33,309",
+    oldPrice: "₹ 50,930",
+    image: ["https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"]
+  },
+  {
+    days: 4,
+    price: "₹ 37,950",
+    oldPrice: "₹ 50,930",
+    image: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQiW2gg-YoD9WDAzSTNUI3RyA3ljTgJEGLRQ&s", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"]
+  },
+  {
+    days: 5,
+    price: "₹ 68,550",
+    oldPrice: "₹ 50,930",
+    image: ["https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"]
+  },
+  {
+    days: 6,
+    price: "₹ 40,930",
+    oldPrice: "₹ 50,930",
+    image: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQiW2gg-YoD9WDAzSTNUI3RyA3ljTgJEGLRQ&s", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"]
+  },
 
-const tripImages = [
+  {
+    days: 7,
+    price: "₹ 57,999",
+    oldPrice: "₹ 50,930",
+    image: ["https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"]
+  },
+  {
+    days: 8,
+    price: "₹ 68,550",
+    oldPrice: "₹ 50,930",
+    image: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQiW2gg-YoD9WDAzSTNUI3RyA3ljTgJEGLRQ&s", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"]
+  },
+  {
+    days: 9,
+    price: "₹ 37,950",
+    oldPrice: "₹ 50,930",
+    image: ["https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"]
+  },
+  {
+    days: 10,
+    price: "₹ 37,950",
+    oldPrice: "₹ 50,930",
+    image: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQiW2gg-YoD9WDAzSTNUI3RyA3ljTgJEGLRQ&s", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"]
+  },
+  {
+    days: 15,
+    price: "₹ 68,550",
+    oldPrice: "₹ 50,930",
+    image: ["https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"]
+  },]
 
-]
+
 const TourDetails = () => {
   const scrollRef = useRef(null);
 
@@ -29,9 +73,11 @@ const TourDetails = () => {
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
+
   const [selectedDays, setSelectedDays] = useState(5);
   const [selectedCategory, setselectedCategory] = useState("Itinerary");
   const [selectedHotelCategory, setselectedHotelCategory] = useState("standard");
+  const [selectedRoute, setSelectedRoute] = useState(null);
 
 
 
@@ -65,9 +111,10 @@ const TourDetails = () => {
   };
 
 
+
   return (
     <div className='container-fluid'>
-      <Header />
+     
       <div className="container tour-details mt-4e">
 
         {/* Tour Image */}
@@ -117,12 +164,14 @@ const TourDetails = () => {
                   className={`trip-card ${selectedDays === option.days ? "active" : ""}`}
                   onClick={() => setSelectedDays(option.days)}
                 >
+
                   <div className="trip-img-container">
                     <img src={option.image[0]} alt={`${option.days}-day trip`} loading='lazy' className="trip-image" />
                     <h3 className="trip-title">{option.days} days</h3>
                   </div>
                   <p className="trip-subtitle">Starting From</p>
                   <h4 className="trip-price">{option.price}</h4>
+
                 </div>
               ))}
             </div>
@@ -143,11 +192,23 @@ const TourDetails = () => {
             <div className="card mb-4">
               <div className="card-body">
                 <h3 className="trip-heading">Destination Routes</h3>
-                <ul className="list-group list-group-flush">
-                  <li className="routes">Deharadun → chardham</li>
-                  <li className="routes">Deadun2 → ekdham → chham3</li>
-                  <li className="routes">Deharadun5 → chardham7</li>
-                </ul>
+                <div className="list-group list-group-flush">
+
+                  {["Deharadun → chardham", "Deadun2 → ekdham → chham3", "Deharadun5 → chardham7"].map((category) => (
+                    <label key={category} className={`routes ${selectedRoute === category ? "active" : ""}`}>
+                      <input
+                        type="radio"
+                        name="Category"
+                        value={category}
+                        checked={selectedRoute === category}
+                        onChange={() => setSelectedRoute(category)}
+                      />
+
+                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                    </label>
+                  ))}
+
+                </div>
               </div>
             </div>
 
@@ -211,7 +272,7 @@ const TourDetails = () => {
                   </button>
                   <div className="collapse multi-collapse1" id="collapseExample1">
                     <div className="card card-body">
-                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?
 
                       <div className="trip-container">
                         {/* Horizontal Scrollable Section */}
@@ -255,7 +316,7 @@ const TourDetails = () => {
                   </button>
                   <div className="collapse multi-collapse2" id="collapseExample2">
                     <div className="card card-body">
-                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. efault but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?
                     </div>
 
                     <div className="trip-container">
@@ -299,7 +360,7 @@ const TourDetails = () => {
                   </button>
                   <div className="collapse multi-collapse3" id="collapseExample3">
                     <div className="card card-body">
-                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. efault but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?
                     </div>
 
                     <div className="trip-container">
@@ -342,17 +403,43 @@ const TourDetails = () => {
             </div>
           </div>
         </div>
+        <div className='container '>
+          <h3>Whats inside the packages?</h3>
+          <div className="inclusion-exclusion mb-5">
+            <div className='row'>
+
+              <div className='card col-md-6 col-sm-12 inclusion-exclusion-card '>
+
+                <ul>
+                  <h5>Inclusion</h5>
+                  <li>Lorem ipsum dolor sit amet c</li>
+                  <li> amet consectetur adipisicing elit. Minus, mollitia!</li>
+                  <li>Lorem ipsum  amet consectetur adipisicing elit. Minus, mollitia!</li>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, mollitia!</li>
+                </ul>
+              </div>
+              <div className='card col-md-6 col-sm-12 inclusion-exclusion-card'>
+                <ul>
+                  <h5>Exclusion</h5>
+                  <li>Lorem ipsuolor sit amet consectetur adipisicing elit. Minus, mollitia!</li>
+                  <li>Lorem ipsum dolor sit  adipisicing elit. Minus, mollitia!</li>
+                  <li>Lorem ipsum dolor sit dipisicing elit. Minus, mollitia!</li>
+                  <li>olor sit dipisicing elit. Minus, mollitia!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+
+      <div className='mb-5'>
+        <h3 className='related-trips'>Related Trips</h3>
+        <TourCarousel />
+      </div>
+
+      
     </div>
-
-
-
-
-
-
-
-
-
   );
 };
 

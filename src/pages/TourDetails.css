@@ -7,9 +7,10 @@ h3 {
   width: 100%;
   margin: 0 200px;
   background: #121212;
-  padding: 20px;
+  padding: 0px;
   color: white;
 }
+
 
 .tour-details-img {
   width: 1000px;
@@ -41,16 +42,7 @@ button {
 }
 
 
-.routes {
-  border: 1px solid #333;
-  border-radius: 10px;
-  font-size: 16px;
-  padding: 12px;
-  background: transparent;
-  color: white;
-  margin: 10px;
-  list-style: none;
-}
+
 
 /* Button Container */
 .category-buttons {
@@ -82,7 +74,7 @@ button {
   color: #ffffff;
   border-color: #0056b3;
   /* Darker blue for active state */
-  box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.3);
+ 
 }
 
 /* Day Details */
@@ -111,18 +103,45 @@ button {
   cursor: grab;
   padding-bottom: 10px;
   user-select: none;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
 
 /* Hide scrollbar */
 .trip-scroll-container::-webkit-scrollbar {
-  display: none;
+  /* display:none;  */
+}
+
+/* Custom scrollbar for Webkit browsers */
+.trip-scroll-container::-webkit-scrollbar {
+  height: 8px;
+  /* Adjust scrollbar height */
+}
+
+.trip-scroll-container::-webkit-scrollbar-track {
+  background: #222;
+  /* Dark background for scrollbar track */
+  border-radius: 10px;
+}
+
+.trip-scroll-container::-webkit-scrollbar-thumb {
+  background: #007bff;
+  /* Blue scrollbar */
+  border-radius: 10px;
+}
+
+.trip-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+  /* Darker blue on hover */
 }
 
 .trip-container {
   padding: 20px;
   display: flex;
-  flex-wrap: wrap;
+
+  flex-wrap: nowrap;
+  /* Prevents wrapping */
   justify-content: center;
   margin-right: 150px;
 }
@@ -204,6 +223,21 @@ button {
   display: none;
 }
 
+.routes {
+  border: 1px solid #333;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 12px;
+  background: transparent;
+  color: white;
+  margin: 10px;
+  list-style: none;
+}
+
+.routes input {
+  display: none;
+}
+
 /* Active Button Style */
 .hotel-btn.active {
   color: white;
@@ -211,6 +245,19 @@ button {
   font-weight: bold;
   transform: scale(1.05);
 }
+
+.routes.active {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.inclusion-exclusion{
+  border: 1px solid #333;
+  max-width:980px;
+  border-radius: 10px;
+  margin:30px;
+  padding:25px 25px;
+}
+
 
 /* itenerary */
 .itinerary-main-img {
@@ -241,10 +288,23 @@ button {
   border-radius: 10px;
 }
 
+.related-trips {
+  margin: 0px 150px;
+}
+
+@media (max-width: 1280px) {
+  .trip-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @media (max-width: 1080px) {
   .tour-details {
-    margin: 0px 0px;
     padding: 0px;
+    margin: 0 auto;
+    /* Centers the section */
+    max-width: 1200px;
+    /* Ensures proper width */
   }
 
   .tour-details-img {
@@ -261,7 +321,23 @@ button {
   .routes {
     padding: 10px;
     margin: 5px;
+  }
 
+  .routes.active {
+    border: 1px solid rgb(255, 255, 255);
+  }
+
+  .related-trips {
+    margin: 0px 0px;
+  }
+  .inclusion-exclusion{
+    margin:0px 0px;
+    
+  }
+  .inclusion-exclusion-card{
+    padding: 0px 10px;
+    min-width: 250px;
+   
   }
 
   /* itenerary */
@@ -271,11 +347,13 @@ button {
     border-radius: 10px;
   }
 
-  
-.itenary-gallery-img-card {
-  margin: 0px;
-  min-width: 250px;
-}
+
+  .itenary-gallery-img-card {
+    margin: 0px;
+    min-width: 250px;
+  }
+
+
   .itenary-gallery {
     width: 230px;
     height: 150px;

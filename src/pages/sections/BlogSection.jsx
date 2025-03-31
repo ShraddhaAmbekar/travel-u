@@ -19,7 +19,7 @@ const BlogSection = () => {
             </div>
 
         </section>
-        <section className="blog-section">
+        <section className="blog-section mb-5">
             <h2>Youtube section: Mindful Retreats</h2>
             <div className="blog-container">
                 
