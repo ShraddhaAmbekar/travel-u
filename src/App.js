@@ -16,7 +16,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/tour/:id" element={<TourDetails />} />
     </Routes>
-    
+  
     </div>
    
   );

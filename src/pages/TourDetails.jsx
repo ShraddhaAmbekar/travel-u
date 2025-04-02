@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useRef, useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './TourDetails.css';
-import Header from '../components/layout/Header';
+
 import TourCarousel from './sections/TourCarausel';
 
 
@@ -66,12 +66,13 @@ const tripOptions = [
 
 
 const TourDetails = () => {
-  const scrollRef = useRef(null);
 
-  // Track drag state
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
+  const carouselRef2 = useRef(null);
+  const carouselRef3 = useRef(null);
+  const carouselRef4 = useRef(null);
+  const carouselRef5 = useRef(null);
+  const cardWidth = 400;
+
 
 
   const [selectedDays, setSelectedDays] = useState(5);
@@ -87,34 +88,20 @@ const TourDetails = () => {
   if (!tour || Object.keys(tour).length === 0) {
     return <h2>No tour details available</h2>;
   }
-
-  // Start Dragging
-  const startDrag = (e) => {
-    isDragging.current = true;
-    startX.current = e.pageX || e.touches[0].pageX; // Support touch
-    scrollLeft.current = scrollRef.current.scrollLeft;
-    scrollRef.current.style.cursor = "grabbing"; // Visual feedback
+  const scroll = (ref, direction) => {
+    if (ref.current) {
+      console.log("Before Scroll:", ref.current.scrollLeft); // Debugging
+      ref.current.scrollLeft += direction * cardWidth;
+      console.log("After Scroll:", ref.current.scrollLeft); // Debugging
+    } else {
+      console.log("Error: ref is null"); // Debugging
+    }
   };
-
-  // Dragging
-  const onDrag = (e) => {
-    if (!isDragging.current) return;
-    const x = e.pageX || e.touches[0].pageX; // Handle touch drag
-    const walk = (x - startX.current) * 2; // Adjust speed
-    scrollRef.current.scrollLeft = scrollLeft.current - walk;
-  };
-
-  // Stop Dragging
-  const stopDrag = () => {
-    isDragging.current = false;
-    scrollRef.current.style.cursor = "grab"; // Reset cursor
-  };
-
 
 
   return (
     <div className='container-fluid'>
-     
+
       <div className="container tour-details mt-4e">
 
         {/* Tour Image */}
@@ -141,39 +128,40 @@ const TourDetails = () => {
         </div>
 
 
-        <div className="trip-container">
+        <div className="container">
           {/* Horizontal Scrollable Section */}
           <div className="container mt-4">
             <h3 className="trip-heading">Choose Trip Duration</h3>
 
             {/* Scrollable Section */}
-            <div
-              className="trip-scroll-container"
-              ref={scrollRef}
-              onMouseDown={startDrag}
-              onMouseMove={onDrag}
-              onMouseUp={stopDrag}
-              onMouseLeave={stopDrag}
-              onTouchStart={startDrag}  // For mobile support
-              onTouchMove={onDrag}  // For mobile support
-              onTouchEnd={stopDrag}  // For mobile support
-            >
-              {tripOptions.map((option) => (
-                <div
-                  key={option.days}
-                  className={`trip-card ${selectedDays === option.days ? "active" : ""}`}
-                  onClick={() => setSelectedDays(option.days)}
-                >
+            <div className="trip-container">
+              <div className="carousel-container">
+                <button className="carousel-btn prev" onClick={() => scroll(carouselRef3, -1)}>
+                  &#10094;
+                </button>
+                <div className="carousel-wrapper" ref={carouselRef3}>
+                  {tripOptions.map((option) => (
+                    <div
+                      key={option.days}
+                      className={`trip-card ${selectedDays === option.days ? "active" : ""}`}
+                      onClick={() => setSelectedDays(option.days)}
+                    >
 
-                  <div className="trip-img-container">
-                    <img src={option.image[0]} alt={`${option.days}-day trip`} loading='lazy' className="trip-image" />
-                    <h3 className="trip-title">{option.days} days</h3>
-                  </div>
-                  <p className="trip-subtitle">Starting From</p>
-                  <h4 className="trip-price">{option.price}</h4>
+                      <div className="trip-img-container">
+                        <img src={option.image[0]} alt={`${option.days}-day trip`} loading='lazy' className="trip-image" />
+                        <h3 className="trip-title">{option.days} days</h3>
+                      </div>
+                      <p className="trip-subtitle">Starting From</p>
+                      <h4 className="trip-price">{option.price}</h4>
 
+                    </div>
+                  ))}
                 </div>
-              ))}
+                <button className="carousel-btn next" onClick={() => scroll(carouselRef3, 1)}>
+                  &#10095;
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
@@ -274,36 +262,29 @@ const TourDetails = () => {
                     <div className="card card-body">
                       Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?
 
-                      <div className="trip-container">
+                      <div className="container">
                         {/* Horizontal Scrollable Section */}
                         <div className="container mt-4">
                           <h5 className="trip-heading">images</h5>
 
-                          {/* Scrollable Section */}
-                          <div
-                            className="trip-scroll-container"
-                            ref={scrollRef}
-                            onMouseDown={startDrag}
-                            onMouseMove={onDrag}
-                            onMouseUp={stopDrag}
-                            onMouseLeave={stopDrag}
-                            onTouchStart={startDrag}  // For mobile support
-                            onTouchMove={onDrag}  // For mobile support
-                            onTouchEnd={stopDrag}  // For mobile support
-                          >
-                            {tripOptions.map((option) => (
-                              <div
-                                key={option.days}
-                                className={`itenary-gallery-img-card ${selectedDays === option.days ? "active" : ""}`}
-                                onClick={() => setSelectedDays(option.days)}
-                              >
-                                <div className="itenary-gallery">
-                                  <img src={option.image} alt={`${option.days}-day trip`} className="itenary-gallery-img" />
 
+                          {/* First Carousel */}
+                          <div className="carousel-container">
+                            <button className="carousel-btn prev" onClick={() => scroll(carouselRef2, -1)}>
+                              &#10094;
+                            </button>
+                            <div className="carousel-wrapper" ref={carouselRef2}>
+                              {tripOptions.map((trip) => (
+                                <div key={trip.days} className={`itenary-gallery-img-card ${selectedDays === trip.days ? "active" : ""}`} onClick={() => setSelectedDays(trip.days)}>
+                                  <div className="itenary-gallery">
+                                    <img src={trip.image} alt={`${trip.days}-day trip`} className="itenary-gallery-img" />
+                                  </div>
                                 </div>
-
-                              </div>
-                            ))}
+                              ))}
+                            </div>
+                            <button className="carousel-btn next" onClick={() => scroll(carouselRef2, 1)}>
+                              &#10095;
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -319,37 +300,29 @@ const TourDetails = () => {
                       Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. efault but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?
                     </div>
 
-                    <div className="trip-container">
+                    <div className="container">
                       {/* Horizontal Scrollable Section */}
                       <div className="container mt-4">
                         <h5 className="trip-heading">images</h5>
-
-                        {/* Scrollable Section */}
-                        <div
-                          className="trip-scroll-container"
-                          ref={scrollRef}
-                          onMouseDown={startDrag}
-                          onMouseMove={onDrag}
-                          onMouseUp={stopDrag}
-                          onMouseLeave={stopDrag}
-                          onTouchStart={startDrag}  // For mobile support
-                          onTouchMove={onDrag}  // For mobile support
-                          onTouchEnd={stopDrag}  // For mobile support
-                        >
-                          {tripOptions.map((option) => (
-                            <div
-                              key={option.days}
-                              className={`itenary-gallery-img-card ${selectedDays === option.days ? "active" : ""}`}
-                              onClick={() => setSelectedDays(option.days)}
-                            >
-                              <div className="itenary-gallery">
-                                <img src={option.image} alt={`${option.days}-day trip`} className="itenary-gallery-img" />
-
+                        {/* Second Carousel */}
+                        <div className="carousel-container">
+                          <button className="carousel-btn prev" onClick={() => scroll(carouselRef4, -1)}>
+                            &#10094;
+                          </button>
+                          <div className="carousel-wrapper" ref={carouselRef4}>
+                            {tripOptions.map((trip) => (
+                              <div key={trip.days} className={`itenary-gallery-img-card ${selectedDays === trip.days ? "active" : ""}`} onClick={() => setSelectedDays(trip.days)}>
+                                <div className="itenary-gallery">
+                                  <img src={trip.image} alt={`${trip.days}-day trip`} className="itenary-gallery-img" />
+                                </div>
                               </div>
-
-                            </div>
-                          ))}
+                            ))}
+                          </div>
+                          <button className="carousel-btn next" onClick={() => scroll(carouselRef4, 1)}>
+                            &#10095;
+                          </button>
                         </div>
+
                       </div>
                     </div>
                   </div>
@@ -362,40 +335,25 @@ const TourDetails = () => {
                     <div className="card card-body">
                       Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. efault but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?
                     </div>
-
-                    <div className="trip-container">
-                      {/* Horizontal Scrollable Section */}
-                      <div className="container mt-4">
-                        <h5 className="trip-heading">images</h5>
-
-                        {/* Scrollable Section */}
-                        <div
-                          className="trip-scroll-container"
-                          ref={scrollRef}
-                          onMouseDown={startDrag}
-                          onMouseMove={onDrag}
-                          onMouseUp={stopDrag}
-                          onMouseLeave={stopDrag}
-                          onTouchStart={startDrag}  // For mobile support
-                          onTouchMove={onDrag}  // For mobile support
-                          onTouchEnd={stopDrag}  // For mobile support
-                        >
-                          {tripOptions.map((option) => (
-                            <div
-                              key={option.days}
-                              className={`itenary-gallery-img-card ${selectedDays === option.days ? "active" : ""}`}
-                              onClick={() => setSelectedDays(option.days)}
-                            >
-                              <div className="itenary-gallery">
-                                <img src={option.image} alt={`${option.days}-day trip`} className="itenary-gallery-img" />
-
-                              </div>
-
+                    {/* Third Carousel */}
+                    <div className="carousel-container">
+                      <button className="carousel-btn prev" onClick={() => scroll(carouselRef5, -1)}>
+                        &#10094;
+                      </button>
+                      <div className="carousel-wrapper" ref={carouselRef5}>
+                        {tripOptions.map((trip) => (
+                          <div key={trip.days} className={`itenary-gallery-img-card ${selectedDays === trip.days ? "active" : ""}`} onClick={() => setSelectedDays(trip.days)}>
+                            <div className="itenary-gallery">
+                              <img src={trip.image} alt={`${trip.days}-day trip`} className="itenary-gallery-img" />
                             </div>
-                          ))}
-                        </div>
+                          </div>
+                        ))}
                       </div>
+                      <button className="carousel-btn next" onClick={() => scroll(carouselRef5, 1)}>
+                        &#10095;
+                      </button>
                     </div>
+
 
                   </div>
                 </div>
@@ -438,7 +396,7 @@ const TourDetails = () => {
         <TourCarousel />
       </div>
 
-      
+
     </div>
   );
 };
