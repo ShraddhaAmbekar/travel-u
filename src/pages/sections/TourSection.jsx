@@ -19,8 +19,9 @@ const TourSection = () => {
                         imageUrl={tour.imageUrl}
                         title={tour.title}
                         duration={tour.duration}
-                        price={tour.price}
-                        oldPrice={tour.oldPrice}
+                        basePrice={tour.basePrice}
+                        oldBasePrice={tour.oldBasePrice}
+                        day={tour.day}
                     />
                 ))}
 

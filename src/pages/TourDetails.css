@@ -41,9 +41,6 @@ button {
   color: white;
 }
 
-
-
-
 /* Button Container */
 .category-buttons {
   display: flex;
@@ -267,25 +264,20 @@ button {
   border-radius: 10px;
 }
 
-
-.itenary-gallery-img-card {
-  display: inline-block;
-  text-align: center;
-  min-width: 300px;
-  border: none;
-  margin: 20px;
-}
-
-.itenary-gallery {
-  width: 300px;
-  height: 200px;
-}
-
-.itenary-gallery-img {
-  width: 100%;
-  height: 100%;
+.image-gallery img {
+  width: 100%;         /* Makes it responsive within the column */
+  max-width: 300px;    /* You can change this to any fixed size */
+  height: 200px;       /* Fixed height */
+  object-fit: cover;   /* Keeps the image zoomed/cropped nicely */
   border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+}
+
 
 .related-trips {
   margin: 0px 150px;
@@ -346,17 +338,7 @@ button {
     border-radius: 10px;
   }
 
-
-  .itenary-gallery-img-card {
-    margin: 0px;
-    min-width: 250px;
-  }
-
-
-  .itenary-gallery {
-    width: 230px;
-    height: 150px;
-  }
+ 
 }
 
 /* Mobile Screens (max-width: 768px) */
@@ -419,6 +401,7 @@ button {
     text-align: center;
     margin: 0px;
   }
+ 
 }
 
 .carousel-wrapper3 {
@@ -429,4 +412,29 @@ button {
   width: 80%;
   padding: 10px;
   scrollbar-width: none; /* Hide scrollbar */
+}
+
+/* Large devices (desktops, 1200px and up) */ 
+@media (min-width: 1200px) {
+  .image-gallery img {
+    max-width: 300px;
+    height: 200px;
+  }
+}
+
+/* Medium devices (tablets, 768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .image-gallery img {
+    width: 250px;
+    height: 180px;
+  }
+}
+
+/* Small devices (mobiles, 767px and below) */
+@media (max-width: 767px) {
+  .image-gallery img {
+   width:  200px;
+    height: 150px;
+    padding: 10px;
+  }
 }

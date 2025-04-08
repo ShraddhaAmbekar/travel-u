@@ -2,26 +2,24 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 
-
-
-const TourCard = ({ id, imageUrl, title, duration, price, oldPrice }) => {
+const TourCard = ({ id, imageUrl, title, duration, basePrice, oldBasePrice,day }) => {
     
     const navigate = useNavigate();
     const handleClick = (e) => {
         if (e.target.closest(".action-buttons")) return; // Prevent navigation on button clicks
-        navigate(`/tour/${id}`, { state: { id, imageUrl, title, duration, price, oldPrice } });
+        navigate(`/tour/${id}`, { state: { id, imageUrl, title, duration, basePrice, oldBasePrice,day } });
+        console.log(day)
     };
-
 
     return (
         <div className="tour-card2 pb-4" onClick={handleClick}>
             <img src={imageUrl} className="tour-img" alt={title} />
             <div className="tour-content">
-                <small className="duration">{duration}</small>
+                <small className="duration">{day}D - {day-1}N</small>
                 <h6 className="">{title}</h6>
                 <div>
-                    <span className="price">₹ {price} / person</span>
-                    <span className="old-price">₹ {oldPrice} / person</span>
+                    <span className="price">₹ {basePrice} / person </span> 
+                    <span className="old-price">₹ {oldBasePrice} / person</span>
                 </div>
                 <div className="action-buttons">
                     <a href="tel:+911234567890" className="btn call-btn"><i className="fas fa-phone"></i></a>
