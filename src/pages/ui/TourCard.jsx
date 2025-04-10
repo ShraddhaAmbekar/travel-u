@@ -2,18 +2,19 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 
+
 const TourCard = ({ id, imageUrl, title, duration, basePrice, oldBasePrice,day }) => {
     
     const navigate = useNavigate();
     const handleClick = (e) => {
         if (e.target.closest(".action-buttons")) return; // Prevent navigation on button clicks
-        navigate(`/tour/${id}`, { state: { id, imageUrl, title, duration, basePrice, oldBasePrice,day } });
-        console.log(day)
+        navigate(`/tour/${id}`, { state: { id, imageUrl, title, duration, basePrice, oldBasePrice, day } });
+        console.log(day,"day")
     };
 
     return (
         <div className="tour-card2 pb-4" onClick={handleClick}>
-            <img src={imageUrl} className="tour-img" alt={title} />
+        <img src={imageUrl} className="tour-img" alt={title} />
             <div className="tour-content">
                 <small className="duration">{day}D - {day-1}N</small>
                 <h6 className="">{title}</h6>

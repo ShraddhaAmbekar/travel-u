@@ -11,4 +11,5 @@ a {
 }
 html, body {
   overflow-x: auto; /* Allow horizontal scrolling */
+  text-align: justify;
 }

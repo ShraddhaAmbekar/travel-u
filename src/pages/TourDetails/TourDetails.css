@@ -11,14 +11,6 @@ h3 {
   color: white;
 }
 
-
-.tour-details-img {
-  width: 1000px;
-  margin: 20px;
-  border-radius: 20px;
-  height: 500px;
-}
-
 .old-price {
   text-decoration: line-through;
 }
@@ -47,31 +39,25 @@ button {
   gap: 10px;
   margin-top: 10px;
 }
+.category-buttons li{
+ list-style: none;
 
-.category-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #333;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: capitalize;
-  width: 120px;
 }
-
-.category-btn input {
-  display: none;
+.category-btn {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: 2px solid #333;
+  border-radius: 20px;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-transform: capitalize;
 }
 
 .category-btn.active {
-  background: #007bff;
-  color: #ffffff;
-  border-color: #0056b3;
-  /* Darker blue for active state */
- 
+  background-color: #007bff;
+  color: white;
 }
 
 /* Day Details */
@@ -80,9 +66,12 @@ button {
   display: flex;
   justify-content: left;
   border: 1px solid #333;
-  margin: 10px 0;
+  margin: 10px 0px;
   padding: 10px;
   color: white;
+}
+.day-info{
+  width:80%
 }
 
 /* Trip Section */
@@ -105,10 +94,6 @@ button {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Hide scrollbar */
-.trip-scroll-container::-webkit-scrollbar {
-  /* display:none;  */
-}
 
 /* Custom scrollbar for Webkit browsers */
 .trip-scroll-container::-webkit-scrollbar {
@@ -265,10 +250,10 @@ button {
 }
 
 .image-gallery img {
-  width: 100%;         /* Makes it responsive within the column */
-  max-width: 300px;    /* You can change this to any fixed size */
-  height: 200px;       /* Fixed height */
-  object-fit: cover;   /* Keeps the image zoomed/cropped nicely */
+  width: 100%;         
+  max-width: 300px;    
+  height: 200px;       
+  object-fit: cover;   
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
@@ -293,9 +278,9 @@ button {
   .tour-details {
     padding: 0px;
     margin: 0 auto;
-    /* Centers the section */
+  
     max-width: 1200px;
-    /* Ensures proper width */
+  
   }
 
   .tour-details-img {
@@ -323,12 +308,11 @@ button {
   }
   .inclusion-exclusion{
     margin:0px 0px;
-    
+    min-width: 270px;
+    padding: 10px 10px;
   }
   .inclusion-exclusion-card{
     padding: 0px 10px;
-    min-width: 250px;
-   
   }
 
   /* itenerary */
@@ -337,8 +321,6 @@ button {
     height: auto;
     border-radius: 10px;
   }
-
- 
 }
 
 /* Mobile Screens (max-width: 768px) */
@@ -365,6 +347,10 @@ button {
     border-radius: 10px;
   }
 
+  .day-details {
+    width: 100%;
+    margin: 10px;
+  }
 }
 
 /* Small Mobile Screens (max-width: 480px) */
@@ -438,3 +424,67 @@ button {
     padding: 10px;
   }
 }
+.tour-details-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.thumb-box {
+  position: relative;
+  width: 100%;
+}
+
+.thumb-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.thumb-img:hover {
+  transform: scale(1.02);
+}
+
+/* View All button dark theme styled */
+.view-all-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.view-all-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .tour-details-img {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+
+  .thumb-img {
+    height: 180px; /* Adjust thumbnail height */
+  }
+
+  .view-all-btn {
+    font-size: 10px; /* Decrease font size */
+    padding: 4px 8px; /* Adjust padding */
+    bottom: 8px; /* Reposition button */
+    right: 8px; /* Reposition button */
+  }
+}
+

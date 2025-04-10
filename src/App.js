@@ -2,9 +2,11 @@ import React from 'react';
 import { Routes,Route } from 'react-router-dom';
 import './styles/App.css';
 import Home from './pages/Home';
-import TourDetails from './pages/TourDetails';
+import TourDetails from "./pages/TourDetails/TourDetails"
 import Header from './components/layout/Header';
 import BottomNavbar from './components/layout/BottomNavbar';
+import AllImages from './pages/AllImages.jsx';
+
 
 
 function App() {
@@ -14,7 +16,8 @@ function App() {
          <BottomNavbar />
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/tour/:id" element={<TourDetails />} />
+      <Route path="/tour/:id" element={<TourDetails/>} />
+      <Route path='/all-images' element={<AllImages/>}/>
     </Routes>
   
     </div>

@@ -10,6 +10,9 @@ const tripOptions = [
         day: 1,
         dayTitle: "Arrive in Uttarakhand",
         dayDiscription: " Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?",
+        activityTitle:"",
+        activityDescription:"",
+        activityImages:"",
         image: [
           "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
           "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/03/kasauni.jpg?w=840&ssl=1",
@@ -84,41 +87,26 @@ const tripOptions = [
           "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
           "https://wandersky.in/wp-content/uploads/2023/09/Untitled-design-6-1.jpg"
         ],
-        dayDetails: [
-          {
-            day: 1,
-            dayTitle: "Arrive in Uttarakhand",
-            dayDiscription: " Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?",
-            image: [
-              "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
-              "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/03/kasauni.jpg?w=840&ssl=1",
-              "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2019/12/Auli-Uttrakhand.jpg?w=800&ssl=1",
-              "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180"],
-          },
-          {
-            day: 2,
-            dayTitle: "Trip to chardham",
-            dayDiscription: "Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?",
-            image: [
-              "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
-              "https://wandersky.in/wp-content/uploads/2023/09/Untitled-design-6-1.jpg", "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
-              "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/03/kasauni.jpg?w=840&ssl=1"],
-
-          },
-          {
-            day: 3,
-            dayTitle: "Shopping & Car drive",
-            dayDiscription: "Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?",
-            image: [
-              "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/03/kasauni.jpg?w=840&ssl=1",
-              "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
-              "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
-              "https://wandersky.in/wp-content/uploads/2023/09/Untitled-design-6-1.jpg"
-            ],
-
-          },
-        ],
+        
+       
+          
+        
       },
+      {
+        day: 4,
+        dayTitle: " Car drive",
+        dayDiscription: "Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?",
+        image: [
+          "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/03/kasauni.jpg?w=840&ssl=1",
+          "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
+          "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
+          "https://wandersky.in/wp-content/uploads/2023/09/Untitled-design-6-1.jpg"
+        ],
+        
+       
+          
+        
+      }
     ],
     HotelDetails:
       [{
@@ -165,7 +153,31 @@ const tripOptions = [
           "https://wandersky.in/wp-content/uploads/2023/09/Untitled-design-6-1.jpg"
         ],
 
-      },
+      }, {
+        day: 4,
+        dayTitle: " Car drive",
+        dayDiscription: "Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?",
+        image: [
+          "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/03/kasauni.jpg?w=840&ssl=1",
+          "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
+          "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
+          "https://wandersky.in/wp-content/uploads/2023/09/Untitled-design-6-1.jpg"
+        ],
+      }, {
+        day: 5,
+        dayTitle: "Shopping & Car drive",
+        dayDiscription: "Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, mollitia?",
+        image: [
+          "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/03/kasauni.jpg?w=840&ssl=1",
+          "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
+          "https://tse4.mm.bing.net/th?id=OIP.mFLCYKuQOHj7C1W-scMbrAHaGU&pid=Api&P=0&h=180",
+          "https://wandersky.in/wp-content/uploads/2023/09/Untitled-design-6-1.jpg"
+        ],
+        
+       
+          
+        
+      }
     ],
     HotelDetails:
       [{
