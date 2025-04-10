@@ -17,3 +17,14 @@
   transform: scale(1.02);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: 1fr; /* Show one column on small screens */
+    gap: 16px;
+  }
+
+  .grid-item img.big-img {
+    height: 220px; /* Reduce image height for smaller screens */
+    border-radius: 4px;
+  }
+}
