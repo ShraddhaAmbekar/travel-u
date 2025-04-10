@@ -7,7 +7,7 @@ h3 {
   width: 100%;
   margin: 0 200px;
   background: #121212;
-  padding: 0px;
+ 
   color: white;
 }
 
@@ -278,13 +278,13 @@ button {
   .tour-details {
     padding: 0px;
     margin: 0 auto;
-  
     max-width: 1200px;
   
   }
 
   .tour-details-img {
-    height: auto;
+    
+   
     border-radius: 10px;
     margin: 0px 0px;
   }
@@ -327,7 +327,6 @@ button {
 @media (max-width: 768px) {
   .tour-details-img {
     width: 100%;
-    height: auto;
     border-radius: 10px;
     margin: 0px 0px;
   }
@@ -345,11 +344,16 @@ button {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    padding:10px
   }
 
   .day-details {
     width: 100%;
-    margin: 10px;
+ 
+  }
+  .day-info {
+    width: 100%;
+   
   }
 }
 
@@ -472,12 +476,9 @@ button {
 }
 
 @media (max-width: 768px) {
-  .tour-details-img {
-    height: 300px; /* Adjust height for smaller screens */
-  }
 
-  .thumb-img {
-    height: 180px; /* Adjust thumbnail height */
+  .thumb-box {
+    display: none;
   }
 
   .view-all-btn {
