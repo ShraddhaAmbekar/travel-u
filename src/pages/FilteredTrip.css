@@ -1,0 +1,78 @@
+.filter-navbar {
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+ 
+  top: 0;
+  z-index: 999;
+  padding:1rem 1rem;
+  position: fixed;
+}
+
+.filter-item {
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.filter-item:hover {
+  color: #0dcaf0; /* Bootstrap cyan */
+  transform: scale(1.05);
+}
+
+.icon {
+  font-size: 1.6rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+/* Default: Desktop styles already applied above */
+
+/* Tablet View */
+@media (max-width: 1080px) {
+  .filter-navbar {
+    padding: 1rem 1rem;
+  }
+
+  .filter-item {
+    margin: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    font-size: 1.4rem;
+  }
+
+  .label {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 767.98px) {
+  .filter-navbar {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 1rem 1rem;
+    
+  }
+  .filter-navbar::-webkit-scrollbar {
+    display: none;
+  }
+  .row {
+    flex-wrap: nowrap;
+  }
+
+  .filter-item {
+    display: inline-block;
+    min-width: 80px;
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+  }
+
+}

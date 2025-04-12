@@ -1,9 +1,9 @@
 import React from 'react';
 import "./Home.css"
-import TourCarousel from './sections/TourCarausel';
-import ToursSection from './sections/TourSection';
-import BlogSection from "./sections/BlogSection"
-import GallerySection from './sections/GallerySection';
+import TourCarousel from '../ui/TourCarausel';
+import ToursSection from '../ui/TourSection';
+import BlogSection from "./BlogSection"
+import GallerySection from './GallerySection';
 
 const Home = () => {
   return (

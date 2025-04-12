@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './TourDetails.css';
 import tripOptions from '../../data/TourDetails'
-import TourCarousel from '../sections/TourCarausel';
+import TourCarousel from '../ui/TourCarausel';
 import Itinerary from './Itinerary'
 import Activity from './Activity';
 import Stay from './Stay';

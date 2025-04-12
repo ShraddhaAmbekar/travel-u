@@ -19,7 +19,7 @@
 }
 @media (max-width: 768px) {
   .image-grid {
-    grid-template-columns: 1fr; /* Show one column on small screens */
+    grid-template-columns: 1fr; 
     gap: 16px;
   }
 

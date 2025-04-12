@@ -1,6 +1,7 @@
 import React from 'react';
 import galleryData from '../../data/gallaryData';
 import './GallerySection.css'
+import { Link } from 'react-router-dom';
 
 const GallerySection = () => {
   return (
@@ -19,6 +20,7 @@ const GallerySection = () => {
               </div>
               <div className="back">
                 <span className="card-content">{item.back}</span>
+                <Link to='/category-trip'><button className='btn'>view info</button></Link>
               </div>
             </div>
           </div>
