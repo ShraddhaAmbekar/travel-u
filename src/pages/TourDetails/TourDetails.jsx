@@ -6,9 +6,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './TourDetails.css';
 import tripOptions from '../../data/TourDetails'
 import TourCarousel from '../ui/TourCarausel';
-import Itinerary from './Itinerary'
-import Activity from './Activity';
-import Stay from './Stay';
+import Itinerary from './Itinerary';
+import Activity from './Activity'
+import Stay from './Stay'
 import TripSelector from "./TripSelector"
 
 const TourDetails = () => {
@@ -31,9 +31,13 @@ const TourDetails = () => {
       console.log("Before Scroll:", ref.current.scrollLeft);
       ref.current.scrollLeft += direction * cardWidth;
       console.log("After Scroll:", ref.current.scrollLeft);
-      console.log(selectedHotelCategory)
+      console.log(selectedHotelCategory);
+                
+                
+                console.log("Selected Category: ", selectedCategory,  selectedOption );
     } else {
       console.log("Error: ref is null");
+     
     }
   };
 
@@ -149,14 +153,14 @@ const TourDetails = () => {
             </li>
           </ul>
           
-            {selectedCategory === "Itinerary" && (
+          {selectedCategory === "Itinerary" && (
               <Itinerary
                 selectedOption={selectedOption}
                 carouselRefs={carouselRefs}
                 scroll={scroll} />
             )}
        
-          {selectedCategory === "activity" && <Activity />}
+          {selectedCategory === "activity" && <Activity/>}
           {selectedCategory === "stay" && <Stay />}
         </div>
       </div>

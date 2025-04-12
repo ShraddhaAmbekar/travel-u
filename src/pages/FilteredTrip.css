@@ -60,10 +60,10 @@
   .filter-navbar::-webkit-scrollbar {
     display: none;
   }
-  .row {
+  
+  .filter-navbar-row{
     flex-wrap: nowrap;
   }
-
   .filter-item {
     display: inline-block;
     min-width: 80px;
