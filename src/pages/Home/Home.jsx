@@ -8,9 +8,30 @@ import GallerySection from './GallerySection';
 const Home = () => {
   return (
     <div>
-      <section>
-        <h5 className="section-title text-center ">Welcome you <br />to <br /><span>"The Land of Gods"</span></h5>
-      </section>
+<section className="">
+  {/* Overlay */}
+  <div className="" />
+
+  {/* Banner Title */}
+  <div className="text-center">
+    <h1 className='hello-font'>
+      WELCOME YOU<br />
+      <span >TO</span><br />
+      <span>
+        "THE LAND OF GOD"
+      </span>
+    </h1>
+    <div/>
+  </div>
+
+
+
+</section>
+
+
+
+
+
 
       {/* mix-tour section */}
       <TourCarousel />

@@ -1,0 +1,65 @@
+.tour-card {
+  border-radius: 15px;
+  overflow: hidden;
+  min-width: 370px;
+}
+
+.tour-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.tour-content {
+  padding: 15px 0;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color:#b6ec27;
+}
+
+.old-price {
+  text-decoration: line-through;
+  font-size: 14px;
+  color: #777;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+
+.action-buttons a {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid rgb(136, 134, 134);
+  transition: 0.3s;
+  width: 42px;
+  height: 42px;
+  color: white;
+  text-decoration: none;
+}
+
+.callback-btn {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgba(182, 236, 39,0.8);
+  color: black;
+  border-radius: 20px;
+  position: relative;
+  bottom: 0px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+}
+
+.icon{
+  color:#b6ec27
+}

@@ -50,7 +50,7 @@
 }
 
 /* Mobile View */
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .filter-navbar {
     overflow-x: auto;
     white-space: nowrap;

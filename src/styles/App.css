@@ -1,9 +1,5 @@
-.header {
-  top: 0;
-  width: 100%;
-  padding: 30px 0;
-  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
-  margin-bottom: 10px;
+.hello-font {
+  font-family: 'HelloMogels', serif;
+  text-shadow: 1px 2px 1px #b6ec27;
+  letter-spacing: 3px;
 }
-
-

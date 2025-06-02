@@ -3,6 +3,9 @@ h3 {
   color: white;
 }
 
+.badge{
+background-color:rgba(182, 236, 39,0.8) ;
+}
 .tour-details {
   width: 100%;
   margin: 0 200px;
@@ -56,8 +59,10 @@ button {
 }
 
 .category-btn.active {
-  background-color: #007bff;
-  color: white;
+  background-color: rgba(182, 236, 39,0.8);
+  color: #000000ea;
+  font-weight: 1000;
+ 
 }
 
 /* Day Details */
@@ -222,13 +227,13 @@ button {
 /* Active Button Style */
 .hotel-btn.active {
   color: white;
-  border-color: rgb(11, 218, 59);
+  border-color: rgba(182, 236, 39);
   font-weight: bold;
   transform: scale(1.05);
 }
 
 .routes.active {
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgba(182, 236, 39);
 }
 
 .inclusion-exclusion{
@@ -299,9 +304,7 @@ button {
     margin: 5px;
   }
 
-  .routes.active {
-    border: 1px solid rgb(255, 255, 255);
-  }
+  
 
   .related-trips {
     margin: 0px 0px;

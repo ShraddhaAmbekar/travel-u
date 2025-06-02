@@ -104,7 +104,7 @@ const TourDetails = () => {
                   ₹{selectedOption?.HotelDetails?.[0]?.[selectedHotelCategory]?.oldPrice} /per person
                 </p>)}
 
-              <span className="badge bg-success fs-5 me-2">4.8 ★</span>
+              <span className="badge  fs-5 me-2">4.8 ★</span>
               <span className="text-primary fw-bold">Excellent</span>
               <span className="ms-2">(564 Reviews)</span>
             </div>
