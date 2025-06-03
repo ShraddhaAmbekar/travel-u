@@ -4,13 +4,13 @@ h3 {
 }
 
 .badge{
-background-color:rgba(182, 236, 39,0.8) ;
+  background-color:rgba(182, 236, 39,0.8);
 }
+
 .tour-details {
   width: 100%;
   margin: 0 200px;
   background: #121212;
- 
   color: white;
 }
 
@@ -43,7 +43,7 @@ button {
   margin-top: 10px;
 }
 .category-buttons li{
- list-style: none;
+  list-style: none;
 
 }
 .category-btn {
@@ -62,7 +62,6 @@ button {
   background-color: rgba(182, 236, 39,0.8);
   color: #000000ea;
   font-weight: 1000;
- 
 }
 
 /* Day Details */
@@ -169,6 +168,7 @@ button {
 .trip-price {
   font-size: 16px;
   font-weight: bold;
+  color: rgba(182, 236, 39);
 }
 
 .trip-title {
@@ -177,7 +177,7 @@ button {
   left: 50%;
   font-size: 18px;
   font-weight: bold;
-  color: white;
+  color:rgba(182, 236, 39);;
   text-shadow: 2px 2px 2px #333;
   transform: translate(-50%, -50%);
 }

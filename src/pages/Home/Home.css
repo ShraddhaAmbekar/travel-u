@@ -1,6 +1,7 @@
 
 .section-title {
 font-size: large;
+ 
 }
 
 
@@ -8,6 +9,7 @@ font-size: large;
   .section-title {
     height: 200px;
     font-size: 2rem;
+  
   }
 }
 
