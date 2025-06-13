@@ -5,9 +5,17 @@
   margin-bottom: 10px;
 }
 
+.navbar>.container-fluid {
+  justify-content: center;
+}
+
+.nav-item{
+margin: 0px 20px;
+}
+
 .logo {
-  width: 150px; /* Adjust width as per your logo size */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Ensure it behaves as a block element */
-  margin: 0 auto; /* Center align horizontally */
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }

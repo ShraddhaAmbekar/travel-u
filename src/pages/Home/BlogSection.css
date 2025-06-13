@@ -33,6 +33,12 @@
   border-radius: 10px;
 }
 
+.blog-page .blog-card{
+  width:40%;
+
+
+}
+
 @media (max-width:1080px) {
 
   /*blog section*/

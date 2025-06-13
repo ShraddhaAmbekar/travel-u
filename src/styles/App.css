@@ -2,4 +2,39 @@
   font-family: 'HelloMogels', serif;
   text-shadow: 1px 2px 1px rgba(183, 236, 39, 0.8);
   letter-spacing: 3px;
+  background-image: url('/public/assets/image.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  padding: 100px 0px;
+  margin: 0px 200px;
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+
+
+@media (max-width: 1080px) {
+  .hello-font {
+    letter-spacing: 2px;
+    height: 120px;
+    padding: 10px;
+    margin: 0px 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
 }

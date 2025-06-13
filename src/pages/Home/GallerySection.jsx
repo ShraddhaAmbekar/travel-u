@@ -3,6 +3,7 @@ import galleryData from '../../data/gallaryData';
 import './GallerySection.css'
 import { Link } from 'react-router-dom';
 
+
 const GallerySection = () => {
   return (
     <div className="container-fluid p-0 my-3">

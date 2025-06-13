@@ -1,18 +1,1 @@
 
-.section-title {
-font-size: large;
- 
-}
-
-
-@media (max-width:1080px) {
-  .section-title {
-    height: 200px;
-    font-size: 2rem;
-  
-  }
-}
-
-@media (max-width:600px) {
- 
-}
